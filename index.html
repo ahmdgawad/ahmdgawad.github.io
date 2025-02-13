@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Redirecting...</title>
+  <meta id="redirectMeta" http-equiv="refresh" content="0">
   <script>
-    // Replace with your target domain
     var newDomain = 'https://188.148.153.53';
-    // Construct the new URL by preserving pathname and query
     var newUrl = newDomain + window.location.pathname + window.location.search;
-    // Optionally, include a short delay so users see the message
-    window.location.replace(newUrl);
+    // Update meta refresh content dynamically
+    document.getElementById('redirectMeta').setAttribute('content', '0; url=' + newUrl);
   </script>
 </head>
 <body>
-  <p>If you are not redirected automatically, <a id="redirectLink" href="#">click here</a>.</p>
+  <p>If you are not redirected automatically, follow this <a id="redirectLink" href="#">link</a>.</p>
   <script>
     document.getElementById('redirectLink').href = newUrl;
   </script>
